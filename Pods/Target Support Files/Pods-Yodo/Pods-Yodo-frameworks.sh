@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Yodo/EZSwiftExtensions.framework"
   install_framework "Pods-Yodo/MBProgressHUD.framework"
+  install_framework "Pods-Yodo/ReachabilitySwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Yodo/EZSwiftExtensions.framework"
   install_framework "Pods-Yodo/MBProgressHUD.framework"
+  install_framework "Pods-Yodo/ReachabilitySwift.framework"
 fi

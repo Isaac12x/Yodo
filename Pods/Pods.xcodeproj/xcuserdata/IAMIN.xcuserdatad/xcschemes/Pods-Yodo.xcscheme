@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '161FF7276D7ABA0170BABC9E'
+               BlueprintIdentifier = '28E072A00D148A7E7628394E'
                BlueprintName = 'Pods-Yodo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Yodo.framework'>

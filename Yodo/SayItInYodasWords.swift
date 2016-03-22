@@ -17,6 +17,7 @@ class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
     
     var quote: Quote!
     var yodasWisdom: YodaWords!
+
     
     @IBOutlet weak var preUpgrade: UITextView!
     @IBOutlet weak var quoteUpgraded: UITextView!
@@ -46,11 +47,15 @@ class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
             }
         }
     
+        // Add Core Data
+        
         do {
             try fetchedResultsController.performFetch()
         } catch {}
         
         fetchedResultsController.delegate = self
+        
+
     }
     
 
@@ -62,8 +67,8 @@ class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
 
     }
     
-    // MARK: - Check for connectivity
-    
+    /* Helper: check for connectivity */
+    /// Notifies the user if there is no connectivity
     func hasConnectivity() -> Bool{
         let reachable: Reachability = Reachability.reachabilityForInternetConnection()
         let networkStatus: Int = reachable.currentReachabilityStatus().rawValue
@@ -73,12 +78,13 @@ class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
             return false
         }
     }
+
     
     /// Make a call to the Yodaclient and place AlertViews in the view
     func preyForYodasWisdom(){
         self.showLoadingHUD()
         
-            if hasConnectivity(){
+        if hasConnectivity() {
                 YodaClient.sharedInstance().taskForGet(quote.quoteContent){ (response, error) in
                     
                     guard let response = response else{
@@ -97,9 +103,18 @@ class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
                         self.hideLoadingHUD()
                     }
                 }
+        } else {
+            ApplicationControlers.justOnce = false
+            dispatch_async(dispatch_get_main_queue()){
+                SweetAlert().showAlert("Ouch!", subTitle: "You don't have an active connection", style: AlertStyle.Warning)
+                self.hideLoadingHUD()
             }
+        }
+
     }
 
+        
+        
     // MARK: - Update th eUI
     
     func updateUI(){

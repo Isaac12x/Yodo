@@ -6,5 +6,6 @@ target 'Yodo' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'EZSwiftExtensions'
+    pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift'
 end
 

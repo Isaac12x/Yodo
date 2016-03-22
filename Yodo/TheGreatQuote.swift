@@ -9,14 +9,13 @@
 import UIKit
 import MBProgressHUD
 import CoreData
-import Crashlytics
 
 class TheGreatQuote: UITableViewController, NSFetchedResultsControllerDelegate{
     
     // MARK: - Variables & Outlets
 
     var quote = [Quote]()
-    
+
     @IBOutlet weak var viewToDownload: UIView!
 
     
@@ -25,7 +24,7 @@ class TheGreatQuote: UITableViewController, NSFetchedResultsControllerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        // Configure view
         self.navigationItem.title = "YODO"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.27, green:0.73, blue:0.86, alpha:1.0)
@@ -36,6 +35,8 @@ class TheGreatQuote: UITableViewController, NSFetchedResultsControllerDelegate{
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
         
+        
+        // Add core data
         do {
             try fetchedResultsController.performFetch()
         } catch {}
@@ -44,12 +45,13 @@ class TheGreatQuote: UITableViewController, NSFetchedResultsControllerDelegate{
 
     }
     
-    // MARK: - Check for connectivity
-    
+    /* Helper: check for connectivity */
+    /// Notifies the user if there is no connectivity
     func hasConnectivity() -> Bool{
         let reachable: Reachability = Reachability.reachabilityForInternetConnection()
         let networkStatus: Int = reachable.currentReachabilityStatus().rawValue
         if networkStatus != 0{
+            print(networkStatus)
             return true
         } else {
             return false
@@ -80,6 +82,11 @@ class TheGreatQuote: UITableViewController, NSFetchedResultsControllerDelegate{
                     self.hideLoadingHUD()
                 }
                 
+            }
+        } else{
+            dispatch_async(dispatch_get_main_queue()){
+                SweetAlert().showAlert("Ouch!", subTitle: "You don't have an active connection, try again later", style: AlertStyle.Warning)
+                self.hideLoadingHUD()
             }
         }
         
@@ -146,10 +153,12 @@ class TheGreatQuote: UITableViewController, NSFetchedResultsControllerDelegate{
     private func showLoadingHUD() {
         let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         hud.labelText = "Loading..."
+        tableView.scrollEnabled = false
     }
     
     private func hideLoadingHUD() {
         MBProgressHUD.hideAllHUDsForView(view, animated: true)
+        tableView.scrollEnabled = true
     }
     
     // MARK: - Core Data
