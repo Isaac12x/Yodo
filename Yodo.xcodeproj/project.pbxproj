@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51059429138D5C2DAAF4CA80 /* Pods_Yodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1659B737CACC73C61C8EA728 /* Pods_Yodo.framework */; };
+		EC5ADA251CA093ED007FE779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA241CA093ED007FE779 /* AppDelegate.swift */; };
+		EC5ADA271CA093ED007FE779 /* TheGreatQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA261CA093ED007FE779 /* TheGreatQuote.swift */; };
+		EC5ADA291CA093ED007FE779 /* SayItInYodasWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA281CA093ED007FE779 /* SayItInYodasWords.swift */; };
+		EC5ADA2C1CA093ED007FE779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5ADA2A1CA093ED007FE779 /* Main.storyboard */; };
+		EC5ADA311CA093ED007FE779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5ADA2F1CA093ED007FE779 /* LaunchScreen.storyboard */; };
+		EC5ADA3C1CA09629007FE779 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA381CA09629007FE779 /* Quote.swift */; };
+		EC5ADA3D1CA09629007FE779 /* AndruxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA391CA09629007FE779 /* AndruxClient.swift */; };
+		EC5ADA3E1CA09629007FE779 /* AndruxConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA3A1CA09629007FE779 /* AndruxConstants.swift */; };
+		EC5ADA3F1CA09629007FE779 /* TableOfQuotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA3B1CA09629007FE779 /* TableOfQuotesCell.swift */; };
+		EC5ADA411CA0987A007FE779 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA401CA0987A007FE779 /* Globals.swift */; };
+		EC5ADA441CA0A364007FE779 /* YodaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA421CA0A364007FE779 /* YodaClient.swift */; };
+		EC5ADA451CA0A364007FE779 /* YodaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA431CA0A364007FE779 /* YodaConstants.swift */; };
+		EC5ADA471CA0A3DF007FE779 /* YodaWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA461CA0A3DF007FE779 /* YodaWords.swift */; };
+		EC5ADA491CA0ACEB007FE779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5ADA481CA0ACEB007FE779 /* Assets.xcassets */; };
+		EC5ADA4B1CA0BB70007FE779 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA4A1CA0BB70007FE779 /* CoreDataStackManager.swift */; };
+		EC5ADA541CA0BCBE007FE779 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA531CA0BCBE007FE779 /* SweetAlert.swift */; };
+		EC5ADA571CA0C099007FE779 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA551CA0C099007FE779 /* Model.xcdatamodeld */; };
+		EC5ADA591CA0E708007FE779 /* ApplicationControlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA581CA0E708007FE779 /* ApplicationControlers.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1659B737CACC73C61C8EA728 /* Pods_Yodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE7B7A6343F757D124DD681 /* Pods-Yodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yodo/Pods-Yodo.release.xcconfig"; sourceTree = "<group>"; };
+		A7E1BDA2B53AE97B054989E4 /* Pods-Yodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yodo/Pods-Yodo.debug.xcconfig"; sourceTree = "<group>"; };
+		EC5ADA211CA093ED007FE779 /* Yodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC5ADA241CA093ED007FE779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC5ADA261CA093ED007FE779 /* TheGreatQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatQuote.swift; sourceTree = "<group>"; };
+		EC5ADA281CA093ED007FE779 /* SayItInYodasWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayItInYodasWords.swift; sourceTree = "<group>"; };
+		EC5ADA2B1CA093ED007FE779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC5ADA301CA093ED007FE779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC5ADA321CA093ED007FE779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC5ADA381CA09629007FE779 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		EC5ADA391CA09629007FE779 /* AndruxClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndruxClient.swift; sourceTree = "<group>"; };
+		EC5ADA3A1CA09629007FE779 /* AndruxConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndruxConstants.swift; sourceTree = "<group>"; };
+		EC5ADA3B1CA09629007FE779 /* TableOfQuotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfQuotesCell.swift; sourceTree = "<group>"; };
+		EC5ADA401CA0987A007FE779 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		EC5ADA421CA0A364007FE779 /* YodaClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YodaClient.swift; sourceTree = "<group>"; };
+		EC5ADA431CA0A364007FE779 /* YodaConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YodaConstants.swift; sourceTree = "<group>"; };
+		EC5ADA461CA0A3DF007FE779 /* YodaWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YodaWords.swift; sourceTree = "<group>"; };
+		EC5ADA481CA0ACEB007FE779 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC5ADA4A1CA0BB70007FE779 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		EC5ADA531CA0BCBE007FE779 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		EC5ADA561CA0C099007FE779 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EC5ADA581CA0E708007FE779 /* ApplicationControlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationControlers.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC5ADA1E1CA093ED007FE779 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51059429138D5C2DAAF4CA80 /* Pods_Yodo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32A9D206B3C41D7A8500132B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1659B737CACC73C61C8EA728 /* Pods_Yodo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5AD7DFF0BDA91548371B3D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7E1BDA2B53AE97B054989E4 /* Pods-Yodo.debug.xcconfig */,
+				3EE7B7A6343F757D124DD681 /* Pods-Yodo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC5ADA181CA093ED007FE779 = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA231CA093ED007FE779 /* Yodo */,
+				EC5ADA221CA093ED007FE779 /* Products */,
+				A5AD7DFF0BDA91548371B3D9 /* Pods */,
+				32A9D206B3C41D7A8500132B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC5ADA221CA093ED007FE779 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA211CA093ED007FE779 /* Yodo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC5ADA231CA093ED007FE779 /* Yodo */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA241CA093ED007FE779 /* AppDelegate.swift */,
+				EC5ADA581CA0E708007FE779 /* ApplicationControlers.swift */,
+				EC5ADA4C1CA0BBD8007FE779 /* Model */,
+				EC5ADA4D1CA0BBE0007FE779 /* View */,
+				EC5ADA4E1CA0BBE5007FE779 /* Controller */,
+				EC5ADA4F1CA0BBEC007FE779 /* Assets */,
+			);
+			path = Yodo;
+			sourceTree = "<group>";
+		};
+		EC5ADA4C1CA0BBD8007FE779 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA4A1CA0BB70007FE779 /* CoreDataStackManager.swift */,
+				EC5ADA551CA0C099007FE779 /* Model.xcdatamodeld */,
+				EC5ADA461CA0A3DF007FE779 /* YodaWords.swift */,
+				EC5ADA381CA09629007FE779 /* Quote.swift */,
+				EC5ADA501CA0BC0A007FE779 /* Clients */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EC5ADA4D1CA0BBE0007FE779 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA3B1CA09629007FE779 /* TableOfQuotesCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EC5ADA4E1CA0BBE5007FE779 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA261CA093ED007FE779 /* TheGreatQuote.swift */,
+				EC5ADA281CA093ED007FE779 /* SayItInYodasWords.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EC5ADA4F1CA0BBEC007FE779 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA531CA0BCBE007FE779 /* SweetAlert.swift */,
+				EC5ADA2A1CA093ED007FE779 /* Main.storyboard */,
+				EC5ADA481CA0ACEB007FE779 /* Assets.xcassets */,
+				EC5ADA2F1CA093ED007FE779 /* LaunchScreen.storyboard */,
+				EC5ADA321CA093ED007FE779 /* Info.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		EC5ADA501CA0BC0A007FE779 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA401CA0987A007FE779 /* Globals.swift */,
+				EC5ADA511CA0BC13007FE779 /* Yoda */,
+				EC5ADA521CA0BC1A007FE779 /* Andrux */,
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
+		EC5ADA511CA0BC13007FE779 /* Yoda */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA421CA0A364007FE779 /* YodaClient.swift */,
+				EC5ADA431CA0A364007FE779 /* YodaConstants.swift */,
+			);
+			name = Yoda;
+			sourceTree = "<group>";
+		};
+		EC5ADA521CA0BC1A007FE779 /* Andrux */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA391CA09629007FE779 /* AndruxClient.swift */,
+				EC5ADA3A1CA09629007FE779 /* AndruxConstants.swift */,
+			);
+			name = Andrux;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC5ADA201CA093ED007FE779 /* Yodo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC5ADA351CA093ED007FE779 /* Build configuration list for PBXNativeTarget "Yodo" */;
+			buildPhases = (
+				AE0C2AFDD06F49FAD6AC13D9 /* Check Pods Manifest.lock */,
+				EC5ADA1D1CA093ED007FE779 /* Sources */,
+				EC5ADA1E1CA093ED007FE779 /* Frameworks */,
+				EC5ADA1F1CA093ED007FE779 /* Resources */,
+				9D16A756DD00A16DDA7CA0BC /* Embed Pods Frameworks */,
+				3382D9F0F873FDDB0EDB3B4C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Yodo;
+			productName = Yodo;
+			productReference = EC5ADA211CA093ED007FE779 /* Yodo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC5ADA191CA093ED007FE779 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = udacity;
+				TargetAttributes = {
+					EC5ADA201CA093ED007FE779 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = EDUH3PA3FS;
+					};
+				};
+			};
+			buildConfigurationList = EC5ADA1C1CA093ED007FE779 /* Build configuration list for PBXProject "Yodo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC5ADA181CA093ED007FE779;
+			productRefGroup = EC5ADA221CA093ED007FE779 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC5ADA201CA093ED007FE779 /* Yodo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC5ADA1F1CA093ED007FE779 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5ADA311CA093ED007FE779 /* LaunchScreen.storyboard in Resources */,
+				EC5ADA491CA0ACEB007FE779 /* Assets.xcassets in Resources */,
+				EC5ADA2C1CA093ED007FE779 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3382D9F0F873FDDB0EDB3B4C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yodo/Pods-Yodo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D16A756DD00A16DDA7CA0BC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yodo/Pods-Yodo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE0C2AFDD06F49FAD6AC13D9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC5ADA1D1CA093ED007FE779 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5ADA591CA0E708007FE779 /* ApplicationControlers.swift in Sources */,
+				EC5ADA3C1CA09629007FE779 /* Quote.swift in Sources */,
+				EC5ADA3D1CA09629007FE779 /* AndruxClient.swift in Sources */,
+				EC5ADA451CA0A364007FE779 /* YodaConstants.swift in Sources */,
+				EC5ADA571CA0C099007FE779 /* Model.xcdatamodeld in Sources */,
+				EC5ADA541CA0BCBE007FE779 /* SweetAlert.swift in Sources */,
+				EC5ADA291CA093ED007FE779 /* SayItInYodasWords.swift in Sources */,
+				EC5ADA251CA093ED007FE779 /* AppDelegate.swift in Sources */,
+				EC5ADA4B1CA0BB70007FE779 /* CoreDataStackManager.swift in Sources */,
+				EC5ADA441CA0A364007FE779 /* YodaClient.swift in Sources */,
+				EC5ADA411CA0987A007FE779 /* Globals.swift in Sources */,
+				EC5ADA3F1CA09629007FE779 /* TableOfQuotesCell.swift in Sources */,
+				EC5ADA271CA093ED007FE779 /* TheGreatQuote.swift in Sources */,
+				EC5ADA471CA0A3DF007FE779 /* YodaWords.swift in Sources */,
+				EC5ADA3E1CA09629007FE779 /* AndruxConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC5ADA2A1CA093ED007FE779 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC5ADA2B1CA093ED007FE779 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC5ADA2F1CA093ED007FE779 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC5ADA301CA093ED007FE779 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC5ADA331CA093ED007FE779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC5ADA341CA093ED007FE779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC5ADA361CA093ED007FE779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7E1BDA2B53AE97B054989E4 /* Pods-Yodo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Yodo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.finalgrading.Yodo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC5ADA371CA093ED007FE779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EE7B7A6343F757D124DD681 /* Pods-Yodo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Yodo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.finalgrading.Yodo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC5ADA1C1CA093ED007FE779 /* Build configuration list for PBXProject "Yodo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5ADA331CA093ED007FE779 /* Debug */,
+				EC5ADA341CA093ED007FE779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC5ADA351CA093ED007FE779 /* Build configuration list for PBXNativeTarget "Yodo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5ADA361CA093ED007FE779 /* Debug */,
+				EC5ADA371CA093ED007FE779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC5ADA551CA0C099007FE779 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC5ADA561CA0C099007FE779 /* Model.xcdatamodel */,
+			);
+			currentVersion = EC5ADA561CA0C099007FE779 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = ../Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EC5ADA191CA093ED007FE779 /* Project object */;
+}
