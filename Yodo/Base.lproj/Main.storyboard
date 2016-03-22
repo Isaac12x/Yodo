@@ -97,7 +97,7 @@
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="EC8-P3-R0c">
                                 <rect key="frame" x="0.0" y="372" width="600" height="228"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="wty-3a-uyo">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="wty-3a-uyo">
                                         <rect key="frame" x="110" y="16" width="413" height="141"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="413" id="Ndk-5Z-Hak"/>

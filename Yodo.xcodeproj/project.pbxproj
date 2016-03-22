@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		51059429138D5C2DAAF4CA80 /* Pods_Yodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1659B737CACC73C61C8EA728 /* Pods_Yodo.framework */; };
 		EC14C2611CA0F97E00CEA660 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC14C25F1CA0F97E00CEA660 /* Model.xcdatamodeld */; };
+		EC4C271E1CA13F5100480334 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C271D1CA13F5100480334 /* Reachability.m */; };
 		EC5ADA251CA093ED007FE779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA241CA093ED007FE779 /* AppDelegate.swift */; };
 		EC5ADA271CA093ED007FE779 /* TheGreatQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA261CA093ED007FE779 /* TheGreatQuote.swift */; };
 		EC5ADA291CA093ED007FE779 /* SayItInYodasWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5ADA281CA093ED007FE779 /* SayItInYodasWords.swift */; };
@@ -33,6 +34,9 @@
 		3EE7B7A6343F757D124DD681 /* Pods-Yodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yodo/Pods-Yodo.release.xcconfig"; sourceTree = "<group>"; };
 		A7E1BDA2B53AE97B054989E4 /* Pods-Yodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yodo/Pods-Yodo.debug.xcconfig"; sourceTree = "<group>"; };
 		EC14C2601CA0F97E00CEA660 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EC4C271B1CA13F5000480334 /* Yodo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yodo-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC4C271C1CA13F5100480334 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		EC4C271D1CA13F5100480334 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		EC5ADA211CA093ED007FE779 /* Yodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5ADA241CA093ED007FE779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC5ADA261CA093ED007FE779 /* TheGreatQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatQuote.swift; sourceTree = "<group>"; };
@@ -83,11 +87,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EC4C271F1CA13FAC00480334 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ADA531CA0BCBE007FE779 /* SweetAlert.swift */,
+				EC4C271C1CA13F5100480334 /* Reachability.h */,
+				EC4C271D1CA13F5100480334 /* Reachability.m */,
+				EC5ADA321CA093ED007FE779 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EC5ADA181CA093ED007FE779 = {
 			isa = PBXGroup;
 			children = (
 				EC5ADA231CA093ED007FE779 /* Yodo */,
-				EC5ADA221CA093ED007FE779 /* Products */,
 				A5AD7DFF0BDA91548371B3D9 /* Pods */,
 				32A9D206B3C41D7A8500132B /* Frameworks */,
 			);
@@ -99,6 +113,7 @@
 				EC5ADA211CA093ED007FE779 /* Yodo.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		EC5ADA231CA093ED007FE779 /* Yodo */ = {
@@ -106,9 +121,12 @@
 			children = (
 				EC5ADA241CA093ED007FE779 /* AppDelegate.swift */,
 				EC5ADA581CA0E708007FE779 /* ApplicationControlers.swift */,
+				EC4C271B1CA13F5000480334 /* Yodo-Bridging-Header.h */,
+				EC5ADA221CA093ED007FE779 /* Products */,
 				EC5ADA4C1CA0BBD8007FE779 /* Model */,
 				EC5ADA4D1CA0BBE0007FE779 /* View */,
 				EC5ADA4E1CA0BBE5007FE779 /* Controller */,
+				EC4C271F1CA13FAC00480334 /* Supporting Files */,
 				EC5ADA4F1CA0BBEC007FE779 /* Assets */,
 			);
 			path = Yodo;
@@ -146,11 +164,9 @@
 		EC5ADA4F1CA0BBEC007FE779 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				EC5ADA531CA0BCBE007FE779 /* SweetAlert.swift */,
 				EC5ADA2A1CA093ED007FE779 /* Main.storyboard */,
 				EC5ADA481CA0ACEB007FE779 /* Assets.xcassets */,
 				EC5ADA2F1CA093ED007FE779 /* LaunchScreen.storyboard */,
-				EC5ADA321CA093ED007FE779 /* Info.plist */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -330,6 +346,7 @@
 				EC5ADA251CA093ED007FE779 /* AppDelegate.swift in Sources */,
 				EC5ADA4B1CA0BB70007FE779 /* CoreDataStackManager.swift in Sources */,
 				EC5ADA441CA0A364007FE779 /* YodaClient.swift in Sources */,
+				EC4C271E1CA13F5100480334 /* Reachability.m in Sources */,
 				EC5ADA411CA0987A007FE779 /* Globals.swift in Sources */,
 				EC5ADA3F1CA09629007FE779 /* TableOfQuotesCell.swift in Sources */,
 				EC5ADA271CA093ED007FE779 /* TheGreatQuote.swift in Sources */,
@@ -448,10 +465,13 @@
 			baseConfigurationReference = A7E1BDA2B53AE97B054989E4 /* Pods-Yodo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Yodo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.finalgrading.Yodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Yodo/Yodo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -460,10 +480,12 @@
 			baseConfigurationReference = 3EE7B7A6343F757D124DD681 /* Pods-Yodo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Yodo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.finalgrading.Yodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Yodo/Yodo-Bridging-Header.h";
 			};
 			name = Release;
 		};

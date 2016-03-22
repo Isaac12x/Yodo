@@ -43,6 +43,18 @@ class TheGreatQuote: UITableViewController, NSFetchedResultsControllerDelegate{
         fetchedResultsController.delegate = self
 
     }
+    
+    // MARK: - Check for connectivity
+    
+    func hasConnectivity() -> Bool{
+        let reachable: Reachability = Reachability.reachabilityForInternetConnection()
+        let networkStatus: Int = reachable.currentReachabilityStatus().rawValue
+        if networkStatus != 0{
+            return true
+        } else {
+            return false
+        }
+    }
 
     
     // MARK: - Download a quote from Andrux
@@ -51,22 +63,24 @@ class TheGreatQuote: UITableViewController, NSFetchedResultsControllerDelegate{
     func downloadQuote(sender: UIBarButtonItem){
         self.showLoadingHUD()
         
-        AndruxClient.sharedInstance().taskForGet{ (response, error) in
-  
-            guard let response = response else{
-                return
-            }
-                    
-            let addQuote = Quote(dictionary: response, context: self.sharedContext)
-            self.quote.append(addQuote)
+        if hasConnectivity(){
+            AndruxClient.sharedInstance().taskForGet{ (response, error) in
+      
+                guard let response = response else{
+                    return
+                }
+                        
+                let addQuote = Quote(dictionary: response, context: self.sharedContext)
+                self.quote.append(addQuote)
 
-            CoreDataStackManager.sharedInstance().saveContext()
+                CoreDataStackManager.sharedInstance().saveContext()
 
-            dispatch_async(dispatch_get_main_queue()){
-                self.tableView.reloadData()
-                self.hideLoadingHUD()
+                dispatch_async(dispatch_get_main_queue()){
+                    self.tableView.reloadData()
+                    self.hideLoadingHUD()
+                }
+                
             }
-            
         }
         
     }

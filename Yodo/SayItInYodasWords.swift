@@ -35,7 +35,6 @@ class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
         self.navigationItem.backBarButtonItem?.title = "Back"
         
         // Textfields
-        self.quoteUpgraded.selectable = true
         self.preUpgrade.text = quote.quoteContent
         
         // MARK: Added guidance - will update to a popOver
@@ -63,30 +62,42 @@ class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
 
     }
     
+    // MARK: - Check for connectivity
+    
+    func hasConnectivity() -> Bool{
+        let reachable: Reachability = Reachability.reachabilityForInternetConnection()
+        let networkStatus: Int = reachable.currentReachabilityStatus().rawValue
+        if networkStatus != 0{
+            return true
+        } else {
+            return false
+        }
+    }
+    
     /// Make a call to the Yodaclient and place AlertViews in the view
     func preyForYodasWisdom(){
         self.showLoadingHUD()
         
-        YodaClient.sharedInstance().taskForGet(quote.quoteContent){ (response, error) in
-            
-            guard let response = response else{
-                return
+            if hasConnectivity(){
+                YodaClient.sharedInstance().taskForGet(quote.quoteContent){ (response, error) in
+                    
+                    guard let response = response else{
+                        return
+                    }
+                    let dataString = NSString(data:response as! NSData, encoding:NSUTF8StringEncoding) as! String
+                    let advice = YodaWords(wisdom: dataString, context: self.sharedContext)
+                    self.yodasWisdom = advice
+                    
+                    
+                    CoreDataStackManager.sharedInstance().saveContext()
+                    
+                    ApplicationControlers.isDownloaded = true
+                    dispatch_async(dispatch_get_main_queue()){
+                        self.updateUI()
+                        self.hideLoadingHUD()
+                    }
+                }
             }
-            let dataString = NSString(data:response as! NSData, encoding:NSUTF8StringEncoding) as! String
-            let advice = YodaWords(wisdom: dataString, context: self.sharedContext)
-            self.yodasWisdom = advice
-            
-            
-            CoreDataStackManager.sharedInstance().saveContext()
-            
-            ApplicationControlers.isDownloaded = true
-            dispatch_async(dispatch_get_main_queue()){
-                self.updateUI()
-                self.hideLoadingHUD()
-            }
-            
-
-        }
     }
 
     // MARK: - Update th eUI
@@ -127,6 +138,8 @@ class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
         return fetchedResultsController
         
     }()
+    
+
     
     // MARK: - Next steps
     // Make the quote shearable
