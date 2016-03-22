@@ -9,15 +9,19 @@
 import UIKit
 import MBProgressHUD
 import EZSwiftExtensions
+import CoreData
 
-class SayItInYodasWords: UIViewController {
+class SayItInYodasWords: UIViewController, NSFetchedResultsControllerDelegate {
 
-    var quoteToUpgrade: String!
-    var yodasWisdom: String!
-    var yodaChargedWisdom: YodaWords!
+    // MARK: - Variables & Outlets
+    
+    var quote: Quote!
+    var yodasWisdom: YodaWords!
     
     @IBOutlet weak var preUpgrade: UITextView!
     @IBOutlet weak var quoteUpgraded: UITextView!
+    
+    // MARK: - Application Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,7 @@ class SayItInYodasWords: UIViewController {
         
         // Textfields
         self.quoteUpgraded.selectable = true
-        self.preUpgrade.text = quoteToUpgrade
+        self.preUpgrade.text = quote.quoteContent
         
         // MARK: Added guidance - will update to a popOver
         if ApplicationControlers.justOnce{
@@ -42,21 +46,15 @@ class SayItInYodasWords: UIViewController {
                 ApplicationControlers.justOnce = false
             }
         }
+    
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {}
         
-        if ApplicationControlers.isDownloaded {
-            //self.quoteUpgraded.text = yodaChargedWisdom.wisdom
-
-        } else {
-            
-        }
-       
-        
+        fetchedResultsController.delegate = self
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
+
     
     // MARK: - Grab a quote and transform the quote to Yoda talk
 
@@ -69,28 +67,33 @@ class SayItInYodasWords: UIViewController {
     func preyForYodasWisdom(){
         self.showLoadingHUD()
         
-        YodaClient.sharedInstance().taskForGet(quoteToUpgrade){ (response, error) in
+        YodaClient.sharedInstance().taskForGet(quote.quoteContent){ (response, error) in
             
             guard let response = response else{
                 return
             }
             let dataString = NSString(data:response as! NSData, encoding:NSUTF8StringEncoding) as! String
-            let advice = YodaWords(wisdom: dataString)
-            self.yodasWisdom = advice.wisdom
+            let advice = YodaWords(wisdom: dataString, context: self.sharedContext)
+            self.yodasWisdom = advice
+            
+            
+            CoreDataStackManager.sharedInstance().saveContext()
             
             ApplicationControlers.isDownloaded = true
             dispatch_async(dispatch_get_main_queue()){
                 self.updateUI()
                 self.hideLoadingHUD()
             }
+            
+
         }
     }
 
     // MARK: - Update th eUI
     
     func updateUI(){
-        self.preUpgrade.text = quoteToUpgrade
-        self.quoteUpgraded.text = yodasWisdom
+        self.preUpgrade.text = quote.quoteContent
+        self.quoteUpgraded.text = yodasWisdom.wisdom
     }
     
     
@@ -104,7 +107,26 @@ class SayItInYodasWords: UIViewController {
         MBProgressHUD.hideAllHUDsForView(view, animated: true)
     }
     
+    // MARK: - Core Data
     
+    lazy var sharedContext: NSManagedObjectContext = {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }()
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        
+        let fetchRequest = NSFetchRequest(entityName: "YodaWords")
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "wisdom", ascending: true)]
+        
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+            managedObjectContext: self.sharedContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        
+        return fetchedResultsController
+        
+    }()
     
     // MARK: - Next steps
     // Make the quote shearable

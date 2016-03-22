@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Quote" representedClassName=".Quote" syncable="YES">
+        <attribute name="quoteAuthor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quoteCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quoteContent" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="yodaWords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="YodaWords" inverseName="quotes" inverseEntity="YodaWords" syncable="YES"/>
+    </entity>
+    <entity name="YodaWords" representedClassName=".YodaWords" syncable="YES">
+        <attribute name="wisdom" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="quotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quote" inverseName="yodaWords" inverseEntity="Quote" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Quote" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="YodaWords" positionX="-54" positionY="-9" width="128" height="75"/>
+    </elements>
+</model>

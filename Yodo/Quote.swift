@@ -9,13 +9,26 @@
 import Foundation
 import CoreData
 
-class Quote{
+class Quote: NSManagedObject{
     
-    var quoteAuthor: String
-    var quoteContent: String
-    var quoteCategory: String
+    struct Keys {
+        static let Author = "author"
+        static let Quote = "quote"
+        static let Category = "category"
+    }
+    
+    @NSManaged var quoteAuthor: String
+    @NSManaged var quoteContent: String
+    @NSManaged var quoteCategory: String
+    @NSManaged var yodaWords: YodaWords?
+    
+    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?){
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    }
 
-    init(dictionary: [String : AnyObject]) {
+    init(dictionary: [String : AnyObject], context: NSManagedObjectContext) {
+        let entity = NSEntityDescription.entityForName("Quote", inManagedObjectContext: context)!
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
         
         quoteAuthor = dictionary[AndruxClient.JSONResponseKeys.Author] as! String
         quoteContent = dictionary[AndruxClient.JSONResponseKeys.Quote] as! String

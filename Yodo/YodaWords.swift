@@ -7,12 +7,21 @@
 //
 
 import Foundation
+import CoreData
 
-class YodaWords{
+class YodaWords: NSManagedObject{
     
-    let wisdom: String
+    @NSManaged var wisdom: String
+    @NSManaged var quote: Quote?
     
-    init(wisdom: String){
+    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?){
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    }
+    
+    init(wisdom: String, context: NSManagedObjectContext){
+        let entity = NSEntityDescription.entityForName("YodaWords", inManagedObjectContext: context)!
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+        
         self.wisdom = wisdom
     }
 }
